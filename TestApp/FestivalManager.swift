@@ -16,10 +16,6 @@ class FestivalManager: HttpManager {
     private let key = "Ejx4tOEJrUzj0J460Snt4dNSCkA0H%2FINuX8Bvec4EMrJJieFwDCHJdL%2BVU%2B6HpuR2nrHrqG8ziZj%2FZ5gwGo0yg%3D%3D"
     
     
-    public convenience init(){
-        super.init()
-    }
-    
     func loadFestivals() -> String {
         
 //        NSURLConnection.sendSynchronousRequest(<#T##request: URLRequest##URLRequest#>, returning: <#T##AutoreleasingUnsafeMutablePointer<URLResponse?>?#>)

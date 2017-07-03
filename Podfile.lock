@@ -1,12 +1,15 @@
 PODS:
+  - ObjectMapper (2.2.7)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - ObjectMapper (~> 2.2)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 1cee792fb3548c5919e7491b5bf97ff8e8e157d0
+PODFILE CHECKSUM: d2639d9adf292c9547ded899f8273545d85db6d8
 
 COCOAPODS: 1.2.1
