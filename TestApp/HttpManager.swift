@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol HttpRequestResponse {
     func onSuccess(responseJson: [Festival])
@@ -18,14 +19,21 @@ enum HttpMethod: String{
     case GET = "GET"
 }
 
+enum Path: String{
+    case LOCATION = "locationBasedList?"
+    case AREA = "areaBasedList?"
+}
+
 class HttpManager: NSObject {
     
     private let MAX_OPERATION_COUNT: Int = 1
     fileprivate var opQueue: OperationQueue
     
-    private let LOCATION_FESTIVAL_URL = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/locationBasedList?" //지역 기반
-    private let AREA_FESTIVAL_URL = "https://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?" //위치 기반
     private let KEY = "Ejx4tOEJrUzj0J460Snt4dNSCkA0H%2FINuX8Bvec4EMrJJieFwDCHJdL%2BVU%2B6HpuR2nrHrqG8ziZj%2FZ5gwGo0yg%3D%3D"
+    
+    private let BASE_URL = "https://api.visitkorea.or.kr/openapi/service/rest/KorService/"
+    private let LOCATION_FESTIVAL_PATH = "locationBasedList?" //지역 기반
+    private let AREA_FESTIVAL_PATH = "areaBasedList?" //위치 기반
     
     
     let session: URLSession = {
@@ -49,34 +57,33 @@ class HttpManager: NSObject {
     
     //   let headers = ["User-Agent": "MATT/1.0 (memeBox/4.1.5.320; iPhone OS/10.1; ko_KR; iPhone/x86_64; 750,1334)"]
     
-    internal func fetchFestival(params: [String:String]) {
+    internal func fetchFestival(params: [String:Any]) {
         var params = params
-        params["ServiceKey"] = KEY
         params["_type"] = "json"
+
         
-        let url = URL(string: LOCATION_FESTIVAL_URL)!
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
+        let headers: HTTPHeaders = ["User-Agent": "MATT/1.0 (memeBox/4.1.5.320; iPhone OS/10.1; ko_KR; iPhone/x86_64; 750,1334)",
+                                    "Content-Type":"application/json"]
         
-        var paramsStr: String = ""
-        for (key,value) in params{
-            paramsStr += key+"="+value+"&"
+        let urlStr = BASE_URL+LOCATION_FESTIVAL_PATH + "ServiceKey" + "=" + KEY
+        
+        Alamofire.request(urlStr, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response)  in
+            if let jsonValue = response.result.value {
+                print("JSON : \(jsonValue)")
+            }
         }
         
-        urlRequest.addValue("chunked", forHTTPHeaderField: "Transfer-Encoding")
-        urlRequest.httpBody = paramsStr.data(using: .utf8)
-        print("hany tag request URL : \(urlRequest)")
         
-        let task = session.dataTask(with: urlRequest) { (data, response, error) -> Void in
-            
-            if let httpStatus = response as? HTTPURLResponse {           // check for http errors
-                print("response \(httpStatus.statusCode)")
-            }
-            
-            if let strData = String(data: data!, encoding: .utf8){
-                print(" result \(strData)")
-            }}
-        
-        task.resume()
+        //        let task = session.dataTask(with: urlRequest) { (data, response, error) -> Void in
+        //
+        //            if let httpStatus = response as? HTTPURLResponse {           // check for http errors
+        //                print("response \(httpStatus.statusCode)")
+        //            }
+        //
+        //            if let strData = String(data: data!, encoding: .utf8){
+        //                print(" result \(strData)")
+        //            }}
+        //        
+        //        task.resume()
     }
 }

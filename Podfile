@@ -6,6 +6,7 @@ target 'TestApp' do
   use_frameworks!
 	pod 'ObjectMapper', '~> 2.2'
 	pod 'SwiftyJSON'
+    	pod 'Alamofire', '~> 4.4'
   # Pods for TestApp
 
 end
