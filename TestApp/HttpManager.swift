@@ -16,6 +16,7 @@ protocol HttpRequestResponse {
 
 class HttpManager: NSObject {
     
+    private let MAX_OPERATION_COUNT: Int = 1
     fileprivate var opQueue: OperationQueue
     
     static var sharedManager: FestivalManager {
@@ -27,7 +28,8 @@ class HttpManager: NSObject {
     
     private override init(){
         opQueue = OperationQueue()
-        opQueue.maxConcurrentOperationCount = 1 //최대 요청 갯수....
+        //최대 요청 갯수....
+        opQueue.maxConcurrentOperationCount = MAX_OPERATION_COUNT
     }
 
 }
