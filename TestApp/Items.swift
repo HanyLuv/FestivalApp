@@ -17,7 +17,7 @@ class Items: Mappable {
     }
     
     func mapping(map: Map) {
-        festivals    <- map["items"]
+        festivals    <- map["item"]
     }
 
 }

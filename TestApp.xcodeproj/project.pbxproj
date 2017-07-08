@@ -21,6 +21,9 @@
 		3F123ED61F0A8AF700672D97 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F123ED51F0A8AF700672D97 /* Header.swift */; };
 		3F123ED81F0A8D2100672D97 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F123ED71F0A8D2100672D97 /* Items.swift */; };
 		3F123EDC1F0A8F2D00672D97 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F123EDB1F0A8F2D00672D97 /* Body.swift */; };
+		3F1F89211F0D4ED9008DDD8B /* FestivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F89201F0D4ED9008DDD8B /* FestivalViewController.swift */; };
+		3F1F89261F0D4F3A008DDD8B /* FestivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F89241F0D4F3A008DDD8B /* FestivalCell.swift */; };
+		3F1F89271F0D4F3A008DDD8B /* FestivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F89251F0D4F3A008DDD8B /* FestivalCell.xib */; };
 		5A918999D6B754411BF9DFE7 /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582E1A73A0525E60BE644DF6 /* Pods_TestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,9 @@
 		3F123ED51F0A8AF700672D97 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		3F123ED71F0A8D2100672D97 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		3F123EDB1F0A8F2D00672D97 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		3F1F89201F0D4ED9008DDD8B /* FestivalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalViewController.swift; sourceTree = "<group>"; };
+		3F1F89241F0D4F3A008DDD8B /* FestivalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalCell.swift; sourceTree = "<group>"; };
+		3F1F89251F0D4F3A008DDD8B /* FestivalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FestivalCell.xib; sourceTree = "<group>"; };
 		582E1A73A0525E60BE644DF6 /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD61EA3BB6096D40A763499 /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +85,7 @@
 		18880C591F0A0AFA00F46571 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F1F89221F0D4F12008DDD8B /* View */,
 				3F123ED01F0A801E00672D97 /* Model */,
 				18880C791F0A433700F46571 /* Controller */,
 				18880C721F0A362D00F46571 /* Network */,
@@ -106,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				18880C701F0A351000F46571 /* TabBarViewController.swift */,
+				3F1F89201F0D4ED9008DDD8B /* FestivalViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -120,6 +128,23 @@
 				3F123ED71F0A8D2100672D97 /* Items.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3F1F89221F0D4F12008DDD8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F89231F0D4F1A008DDD8B /* Cell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3F1F89231F0D4F1A008DDD8B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F89241F0D4F3A008DDD8B /* FestivalCell.swift */,
+				3F1F89251F0D4F3A008DDD8B /* FestivalCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		ADC493375D8D36F1F910DFFF /* Pods */ = {
@@ -205,6 +230,7 @@
 				18880C651F0A0AFA00F46571 /* LaunchScreen.storyboard in Resources */,
 				18880C621F0A0AFA00F46571 /* Assets.xcassets in Resources */,
 				18880C601F0A0AFA00F46571 /* Main.storyboard in Resources */,
+				3F1F89271F0D4F3A008DDD8B /* FestivalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1F89261F0D4F3A008DDD8B /* FestivalCell.swift in Sources */,
 				3F123EDC1F0A8F2D00672D97 /* Body.swift in Sources */,
 				3F123ED41F0A89BB00672D97 /* Response.swift in Sources */,
 				3F123ED61F0A8AF700672D97 /* Header.swift in Sources */,
@@ -271,6 +298,7 @@
 				3F123ED21F0A80AF00672D97 /* Festival.swift in Sources */,
 				18880C781F0A3AB400F46571 /* ImageManager.swift in Sources */,
 				3F123ED81F0A8D2100672D97 /* Items.swift in Sources */,
+				3F1F89211F0D4ED9008DDD8B /* FestivalViewController.swift in Sources */,
 				18880C761F0A3A6500F46571 /* HttpManager.swift in Sources */,
 				18880C6D1F0A2EB300F46571 /* Park.swift in Sources */,
 				18880C5B1F0A0AFA00F46571 /* AppDelegate.swift in Sources */,

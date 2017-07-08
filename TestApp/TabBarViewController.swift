@@ -14,22 +14,6 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         
-        var params = [String:String]()
-        params["contentTypeId"] = "39"
-        params["mapX"] = "126.981611"
-        params["mapY"] = "37.568477"
-        params["radius"] = "500"
-        params["pageNo"] = "1"
-        params["numOfRows"] = "5"
-        params["listYN"] = "Y"
-        params["arrange"] = "A"
-        params["MobileOS"] = "IOS"
-        params["MobileApp"] = "TestApp"
-        params["_type"] = "json"
-        
-    
-        HttpManager.sharedManager.fetchFestival(params: params)
-        
         
         
     }

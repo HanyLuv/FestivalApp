@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+import SwiftyJSON
 
 protocol HttpRequestResponse {
     func onSuccess(responseJson: [Festival])
@@ -37,7 +37,13 @@ class HttpManager: NSObject {
     
     
     let session: URLSession = {
+        let headers: [String:String] = ["User-Agent": "MATT/1.0 (memeBox/4.1.5.320; iPhone OS/10.1; ko_KR; iPhone/x86_64; 750,1334)",
+                                    "Content-Type":"application/json"]
+        
         let config = URLSessionConfiguration.default
+            config.timeoutIntervalForRequest = 5
+            config.httpAdditionalHeaders = headers
+        
         return URLSession(configuration: config)
     }()
     
@@ -54,36 +60,42 @@ class HttpManager: NSObject {
         opQueue.maxConcurrentOperationCount = MAX_OPERATION_COUNT
     }
     
-    
-    //   let headers = ["User-Agent": "MATT/1.0 (memeBox/4.1.5.320; iPhone OS/10.1; ko_KR; iPhone/x86_64; 750,1334)"]
-    
-    internal func fetchFestival(params: [String:Any]) {
+    internal func fetchFestival(params: [String:String], completed callback: @escaping (_ success: Bool, _ items: Items?) -> Void) {
         var params = params
         params["_type"] = "json"
-
         
-        let headers: HTTPHeaders = ["User-Agent": "MATT/1.0 (memeBox/4.1.5.320; iPhone OS/10.1; ko_KR; iPhone/x86_64; 750,1334)",
-                                    "Content-Type":"application/json"]
+        var urlStr = BASE_URL+LOCATION_FESTIVAL_PATH + "ServiceKey" + "=" + KEY + "&"
         
-        let urlStr = BASE_URL+LOCATION_FESTIVAL_PATH + "ServiceKey" + "=" + KEY
+        var paramsStr: String = ""
+        for (key,value) in params{
+            paramsStr += key+"="+value+"&"
+        }
         
-        Alamofire.request(urlStr, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response)  in
-            if let jsonValue = response.result.value {
-                print("JSON : \(jsonValue)")
+        urlStr += paramsStr
+        
+        let url = URL(string: urlStr)!
+        
+        let task = session.dataTask(with: url) { (data, response, error) -> Void in
+            
+            if let httpStatus = response as? HTTPURLResponse {           // check for http errors 200 성공임.
+                print("response \(httpStatus.statusCode)")
+            }
+            
+            if let strData = String(data: data!, encoding: .utf8){
+                let json = JSON(parseJSON: strData)
+                let jsonItems = json["response"]["body"]["items"]
+                
+                if let strItems = jsonItems.rawString(), let items = Items(JSONString:strItems) {
+                    callback(true, items)
+                    
+                } else {
+                    callback(false, nil)
+                }
+                
+                
             }
         }
         
-        
-        //        let task = session.dataTask(with: urlRequest) { (data, response, error) -> Void in
-        //
-        //            if let httpStatus = response as? HTTPURLResponse {           // check for http errors
-        //                print("response \(httpStatus.statusCode)")
-        //            }
-        //
-        //            if let strData = String(data: data!, encoding: .utf8){
-        //                print(" result \(strData)")
-        //            }}
-        //        
-        //        task.resume()
+        task.resume()
     }
 }
