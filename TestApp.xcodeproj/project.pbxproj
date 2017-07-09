@@ -16,6 +16,19 @@
 		18880C741F0A364900F46571 /* FestivalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C731F0A364900F46571 /* FestivalManager.swift */; };
 		18880C761F0A3A6500F46571 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C751F0A3A6500F46571 /* HttpManager.swift */; };
 		18880C781F0A3AB400F46571 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C771F0A3AB400F46571 /* ImageManager.swift */; };
+		3F1125821F11A297009C9A47 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1125811F11A297009C9A47 /* MainViewController.swift */; };
+		3F1125841F11A35E009C9A47 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1125831F11A35E009C9A47 /* HomeViewController.swift */; };
+		3F1125871F11A44A009C9A47 /* MainBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1125851F11A44A009C9A47 /* MainBannerCell.swift */; };
+		3F1125881F11A44A009C9A47 /* MainBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1125861F11A44A009C9A47 /* MainBannerCell.xib */; };
+		3F11258D1F11A7EE009C9A47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11258C1F11A7EE009C9A47 /* Constants.swift */; };
+		3F1125901F11A913009C9A47 /* ThemaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11258E1F11A913009C9A47 /* ThemaCell.swift */; };
+		3F1125911F11A913009C9A47 /* ThemaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F11258F1F11A913009C9A47 /* ThemaCell.xib */; };
+		3F1125981F11A940009C9A47 /* BestPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1125961F11A940009C9A47 /* BestPlaceCell.swift */; };
+		3F1125991F11A940009C9A47 /* BestPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1125971F11A940009C9A47 /* BestPlaceCell.xib */; };
+		3F11259C1F11A968009C9A47 /* LocationRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11259A1F11A968009C9A47 /* LocationRecommendCell.swift */; };
+		3F11259D1F11A968009C9A47 /* LocationRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F11259B1F11A968009C9A47 /* LocationRecommendCell.xib */; };
+		3F1125A01F11A9BB009C9A47 /* PersonalRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F11259E1F11A9BB009C9A47 /* PersonalRecommendCell.swift */; };
+		3F1125A11F11A9BB009C9A47 /* PersonalRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F11259F1F11A9BB009C9A47 /* PersonalRecommendCell.xib */; };
 		3F123ED21F0A80AF00672D97 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F123ED11F0A80AF00672D97 /* Festival.swift */; };
 		3F123ED41F0A89BB00672D97 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F123ED31F0A89BB00672D97 /* Response.swift */; };
 		3F123ED61F0A8AF700672D97 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F123ED51F0A8AF700672D97 /* Header.swift */; };
@@ -40,6 +53,19 @@
 		18880C751F0A3A6500F46571 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		18880C771F0A3AB400F46571 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		254A8FF8A92D1BB5821D5372 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3F1125811F11A297009C9A47 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3F1125831F11A35E009C9A47 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F1125851F11A44A009C9A47 /* MainBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBannerCell.swift; sourceTree = "<group>"; };
+		3F1125861F11A44A009C9A47 /* MainBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBannerCell.xib; sourceTree = "<group>"; };
+		3F11258C1F11A7EE009C9A47 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F11258E1F11A913009C9A47 /* ThemaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemaCell.swift; sourceTree = "<group>"; };
+		3F11258F1F11A913009C9A47 /* ThemaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemaCell.xib; sourceTree = "<group>"; };
+		3F1125961F11A940009C9A47 /* BestPlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlaceCell.swift; sourceTree = "<group>"; };
+		3F1125971F11A940009C9A47 /* BestPlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestPlaceCell.xib; sourceTree = "<group>"; };
+		3F11259A1F11A968009C9A47 /* LocationRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRecommendCell.swift; sourceTree = "<group>"; };
+		3F11259B1F11A968009C9A47 /* LocationRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationRecommendCell.xib; sourceTree = "<group>"; };
+		3F11259E1F11A9BB009C9A47 /* PersonalRecommendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalRecommendCell.swift; sourceTree = "<group>"; };
+		3F11259F1F11A9BB009C9A47 /* PersonalRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalRecommendCell.xib; sourceTree = "<group>"; };
 		3F123ED11F0A80AF00672D97 /* Festival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
 		3F123ED31F0A89BB00672D97 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		3F123ED51F0A8AF700672D97 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -85,6 +111,7 @@
 		18880C591F0A0AFA00F46571 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F11258A1F11A7C5009C9A47 /* Common */,
 				3F1F89221F0D4F12008DDD8B /* View */,
 				3F123ED01F0A801E00672D97 /* Model */,
 				18880C791F0A433700F46571 /* Controller */,
@@ -114,8 +141,27 @@
 			children = (
 				18880C701F0A351000F46571 /* TabBarViewController.swift */,
 				3F1F89201F0D4ED9008DDD8B /* FestivalViewController.swift */,
+				3F1125811F11A297009C9A47 /* MainViewController.swift */,
+				3F1125831F11A35E009C9A47 /* HomeViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		3F1125891F11A461009C9A47 /* CollectionView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F89241F0D4F3A008DDD8B /* FestivalCell.swift */,
+				3F1F89251F0D4F3A008DDD8B /* FestivalCell.xib */,
+			);
+			name = "CollectionView Cell";
+			sourceTree = "<group>";
+		};
+		3F11258A1F11A7C5009C9A47 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3F11258C1F11A7EE009C9A47 /* Constants.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		3F123ED01F0A801E00672D97 /* Model */ = {
@@ -133,18 +179,27 @@
 		3F1F89221F0D4F12008DDD8B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3F1F89231F0D4F1A008DDD8B /* Cell */,
+				3F1125891F11A461009C9A47 /* CollectionView Cell */,
+				3F1F89231F0D4F1A008DDD8B /* Table Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		3F1F89231F0D4F1A008DDD8B /* Cell */ = {
+		3F1F89231F0D4F1A008DDD8B /* Table Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3F1F89241F0D4F3A008DDD8B /* FestivalCell.swift */,
-				3F1F89251F0D4F3A008DDD8B /* FestivalCell.xib */,
+				3F1125861F11A44A009C9A47 /* MainBannerCell.xib */,
+				3F1125851F11A44A009C9A47 /* MainBannerCell.swift */,
+				3F11258E1F11A913009C9A47 /* ThemaCell.swift */,
+				3F11258F1F11A913009C9A47 /* ThemaCell.xib */,
+				3F1125961F11A940009C9A47 /* BestPlaceCell.swift */,
+				3F1125971F11A940009C9A47 /* BestPlaceCell.xib */,
+				3F11259A1F11A968009C9A47 /* LocationRecommendCell.swift */,
+				3F11259B1F11A968009C9A47 /* LocationRecommendCell.xib */,
+				3F11259E1F11A9BB009C9A47 /* PersonalRecommendCell.swift */,
+				3F11259F1F11A9BB009C9A47 /* PersonalRecommendCell.xib */,
 			);
-			name = Cell;
+			name = "Table Cell";
 			sourceTree = "<group>";
 		};
 		ADC493375D8D36F1F910DFFF /* Pods */ = {
@@ -227,10 +282,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F11259D1F11A968009C9A47 /* LocationRecommendCell.xib in Resources */,
 				18880C651F0A0AFA00F46571 /* LaunchScreen.storyboard in Resources */,
 				18880C621F0A0AFA00F46571 /* Assets.xcassets in Resources */,
 				18880C601F0A0AFA00F46571 /* Main.storyboard in Resources */,
+				3F1125A11F11A9BB009C9A47 /* PersonalRecommendCell.xib in Resources */,
 				3F1F89271F0D4F3A008DDD8B /* FestivalCell.xib in Resources */,
+				3F1125991F11A940009C9A47 /* BestPlaceCell.xib in Resources */,
+				3F1125881F11A44A009C9A47 /* MainBannerCell.xib in Resources */,
+				3F1125911F11A913009C9A47 /* ThemaCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,14 +350,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1F89261F0D4F3A008DDD8B /* FestivalCell.swift in Sources */,
+				3F11258D1F11A7EE009C9A47 /* Constants.swift in Sources */,
 				3F123EDC1F0A8F2D00672D97 /* Body.swift in Sources */,
+				3F1125821F11A297009C9A47 /* MainViewController.swift in Sources */,
 				3F123ED41F0A89BB00672D97 /* Response.swift in Sources */,
+				3F1125981F11A940009C9A47 /* BestPlaceCell.swift in Sources */,
 				3F123ED61F0A8AF700672D97 /* Header.swift in Sources */,
 				18880C711F0A351000F46571 /* TabBarViewController.swift in Sources */,
 				18880C741F0A364900F46571 /* FestivalManager.swift in Sources */,
 				3F123ED21F0A80AF00672D97 /* Festival.swift in Sources */,
+				3F1125841F11A35E009C9A47 /* HomeViewController.swift in Sources */,
 				18880C781F0A3AB400F46571 /* ImageManager.swift in Sources */,
+				3F1125901F11A913009C9A47 /* ThemaCell.swift in Sources */,
+				3F1125A01F11A9BB009C9A47 /* PersonalRecommendCell.swift in Sources */,
+				3F1125871F11A44A009C9A47 /* MainBannerCell.swift in Sources */,
 				3F123ED81F0A8D2100672D97 /* Items.swift in Sources */,
+				3F11259C1F11A968009C9A47 /* LocationRecommendCell.swift in Sources */,
 				3F1F89211F0D4ED9008DDD8B /* FestivalViewController.swift in Sources */,
 				18880C761F0A3A6500F46571 /* HttpManager.swift in Sources */,
 				18880C6D1F0A2EB300F46571 /* Park.swift in Sources */,
