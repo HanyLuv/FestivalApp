@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183309771F1376DD0026059B /* BestPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183309751F1376DD0026059B /* BestPlaceCell.swift */; };
+		183309781F1376DD0026059B /* BestPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183309761F1376DD0026059B /* BestPlaceCell.xib */; };
 		18880C5B1F0A0AFA00F46571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C5A1F0A0AFA00F46571 /* AppDelegate.swift */; };
 		18880C601F0A0AFA00F46571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18880C5E1F0A0AFA00F46571 /* Main.storyboard */; };
 		18880C621F0A0AFA00F46571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18880C611F0A0AFA00F46571 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		10B5F428DB5BF0B0614EF4DF /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		183309751F1376DD0026059B /* BestPlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlaceCell.swift; sourceTree = "<group>"; };
+		183309761F1376DD0026059B /* BestPlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestPlaceCell.xib; sourceTree = "<group>"; };
 		18880C571F0A0AFA00F46571 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18880C5A1F0A0AFA00F46571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18880C5F1F0A0AFA00F46571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				3F11259B1F11A968009C9A47 /* LocationRecommendCell.xib */,
 				3F11259E1F11A9BB009C9A47 /* PersonalRecommendCell.swift */,
 				3F11259F1F11A9BB009C9A47 /* PersonalRecommendCell.xib */,
+				183309751F1376DD0026059B /* BestPlaceCell.swift */,
+				183309761F1376DD0026059B /* BestPlaceCell.xib */,
 			);
 			name = "Table Cell";
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 				18880C601F0A0AFA00F46571 /* Main.storyboard in Resources */,
 				3F1125A11F11A9BB009C9A47 /* PersonalRecommendCell.xib in Resources */,
 				18FF516A1F13728A00E0F847 /* BestPlaceItemCell.xib in Resources */,
+				183309781F1376DD0026059B /* BestPlaceCell.xib in Resources */,
 				3F1125881F11A44A009C9A47 /* MainBannerCell.xib in Resources */,
 				3F1125911F11A913009C9A47 /* ThemaCell.xib in Resources */,
 			);
@@ -338,6 +345,7 @@
 			files = (
 				3F11258D1F11A7EE009C9A47 /* Constants.swift in Sources */,
 				3F123EDC1F0A8F2D00672D97 /* Body.swift in Sources */,
+				183309771F1376DD0026059B /* BestPlaceCell.swift in Sources */,
 				3F1125821F11A297009C9A47 /* MainViewController.swift in Sources */,
 				18FF51691F13728A00E0F847 /* BestPlaceItemCell.swift in Sources */,
 				3F123ED41F0A89BB00672D97 /* Response.swift in Sources */,
