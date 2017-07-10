@@ -14,29 +14,21 @@ protocol HttpRequestResponse {
     //    func onFail(error: RequestError)
 }
 
-enum HttpMethod: String{
-    case POST = "POST"
-    case GET = "GET"
-}
-
-enum Path: String{
-    case LOCATION = "locationBasedList?"
-    case AREA = "areaBasedList?"
-}
-
 class HttpManager: NSObject {
+    private let baseURL = "https://api.visitkorea.or.kr/openapi/service/rest/KorService"
+    
     
     private let MAX_OPERATION_COUNT: Int = 1
     fileprivate var opQueue: OperationQueue
     
-    private let KEY = "Ejx4tOEJrUzj0J460Snt4dNSCkA0H%2FINuX8Bvec4EMrJJieFwDCHJdL%2BVU%2B6HpuR2nrHrqG8ziZj%2FZ5gwGo0yg%3D%3D"
+    static var sharedManager: HttpManager {
+        struct Static {
+            static let instance: HttpManager = HttpManager()
+        }
+        return Static.instance
+    }
     
-    private let BASE_URL = "https://api.visitkorea.or.kr/openapi/service/rest/KorService/"
-    private let LOCATION_FESTIVAL_PATH = "locationBasedList?" //지역 기반
-    private let AREA_FESTIVAL_PATH = "areaBasedList?" //위치 기반
-    
-    
-    let session: URLSession = {
+    fileprivate let session: URLSession = {
         let headers: [String:String] = ["User-Agent": "MATT/1.0 (memeBox/4.1.5.320; iPhone OS/10.1; ko_KR; iPhone/x86_64; 750,1334)",
                                     "Content-Type":"application/json"]
         
@@ -47,35 +39,15 @@ class HttpManager: NSObject {
         return URLSession(configuration: config)
     }()
     
-    static var sharedManager: HttpManager {
-        struct Static {
-            static let instance: HttpManager = HttpManager()
-        }
-        return Static.instance
-    }
-    
     private override init(){
         opQueue = OperationQueue()
-        //최대 요청 갯수....
         opQueue.maxConcurrentOperationCount = MAX_OPERATION_COUNT
     }
     
     internal func fetchFestival(params: [String:String], completed callback: @escaping (_ success: Bool, _ items: Items?) -> Void) {
-        var params = params
-        params["_type"] = "json"
         
-        var urlStr = BASE_URL+LOCATION_FESTIVAL_PATH + "ServiceKey" + "=" + KEY + "&"
-        
-        var paramsStr: String = ""
-        for (key,value) in params{
-            paramsStr += key+"="+value+"&"
-        }
-        
-        urlStr += paramsStr
-        
-        let url = URL(string: urlStr)!
-        
-        let task = session.dataTask(with: url) { (data, response, error) -> Void in
+        let urlRequest = createGetRequest(path: Constants.Path.LOCATION_FESTIVAL_PATH, params: params)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             
             if let httpStatus = response as? HTTPURLResponse {           // check for http errors 200 성공임.
                 print("response \(httpStatus.statusCode)")
@@ -96,6 +68,60 @@ class HttpManager: NSObject {
             }
         }
         
+        opQueue.addOperation(HttpOperation.init(task: task))
+    }
+    
+    
+    private func createGetRequest(path: String, params: [String: String]) -> URLRequest {
+        var params = params
+        params["_type"] = "json"
+        
+        var paramsStr: String = "?"
+        for (key,value) in params{
+            paramsStr += key+"="+value+"&"
+        }
+        
+        let url = URL.init(string: baseURL + path + paramsStr)!
+        print("url [ \( baseURL + paramsStr) ]")
+        
+        var requset = URLRequest.init(url: url)
+        requset.httpMethod = "GET"
+        
+        return requset
+    }
+    
+    
+    internal func cancelAll(){
+        for operation in opQueue.operations {
+            operation.cancel()
+        }
+    }
+    
+    
+}
+
+
+
+
+
+fileprivate class HttpOperation: Operation {
+    private let task: URLSessionTask
+    
+    init(task: URLSessionTask) {
+        self.task = task
+    }
+    
+    override open func main(){
+        super.main()
         task.resume()
     }
+    
+    override func cancel() {
+        super.cancel()
+        task.cancel()
+        
+        print("hany tag cancel status : \(task.state.rawValue )" )
+
+    }
+    
 }

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class HomeViewController.swift: UITableViewController {
+class HomeViewController: UITableViewController {
 
     @IBOutlet var mainTableView: UITableView!
+
+    fileprivate var festivals :[Festival]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +21,29 @@ class HomeViewController.swift: UITableViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
-        mainTableView.register(UINib.init(nibName: "", bundle: nil), forCellReuseIdentifier: )
+        fetchFestival()
         
+    }
+    
+    private func fetchFestival(){
+        var params = [String:String]()
+        params["contentTypeId"] = "39"
+        params["mapX"] = "126.981611"
+        params["mapY"] = "37.568477"
+        params["radius"] = "500"
+        params["pageNo"] = "1"
+        params["numOfRows"] = "30"
+        params["listYN"] = "Y"
+        params["arrange"] = "A"
+        params["MobileOS"] = "IOS"
+        params["MobileApp"] = "TestApp"
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        HttpManager.sharedManager.fetchFestival(params: params, completed: { (success, items) in
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+            print("hany tag success \(success.hashValue)" )
+            
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
