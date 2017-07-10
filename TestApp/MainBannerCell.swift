@@ -9,8 +9,8 @@
 import UIKit
 
 class MainBannerCell: UITableViewCell {
+    static let identifier =  "MainBannerCellIdentifire"
     @IBOutlet weak var dateLabel: UILabel!
-
     @IBOutlet weak var locationLabel: UILabel!
     
     

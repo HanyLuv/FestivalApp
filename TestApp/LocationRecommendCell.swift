@@ -9,7 +9,7 @@
 import UIKit
 
 class LocationRecommendCell: UITableViewCell {
-
+    static let identifier = "LocationRecommendCellIdentifire"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

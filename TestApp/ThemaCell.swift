@@ -9,7 +9,8 @@
 import UIKit
 
 class ThemaCell: UITableViewCell {
-
+    static let identifier =  "ThemaCellIdentifire"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

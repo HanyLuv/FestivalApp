@@ -9,6 +9,8 @@
 import UIKit
 
 class PersonalRecommendCell: UITableViewCell {
+    
+    static let identifier = "PersonalRecommendCellIdentifire"
 
     override func awakeFromNib() {
         super.awakeFromNib()

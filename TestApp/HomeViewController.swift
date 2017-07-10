@@ -12,7 +12,7 @@ class HomeViewController: UITableViewController {
 
     @IBOutlet var mainTableView: UITableView!
 
-    fileprivate var festivals :[Festival]?
+    fileprivate var festivals :[Items]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,13 @@ class HomeViewController: UITableViewController {
         
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        
+        mainTableView.register(UINib.init(nibName: "MainBannerCell", bundle: nil), forCellReuseIdentifier: MainBannerCell.identifier)
+        mainTableView.register(UINib.init(nibName: "ThemaCell", bundle: nil), forCellReuseIdentifier: ThemaCell.identifier)
+//        mainTableView.register(UINib.init(nibName: "BestPlaceCell", bundle: nil), forCellReuseIdentifier: BestPlaceCell.identifier)
+        mainTableView.register(UINib.init(nibName: "LocationRecommendCell", bundle: nil), forCellReuseIdentifier: LocationRecommendCell.identifier)
+        mainTableView.register(UINib.init(nibName: "PersonalRecommendCell", bundle: nil), forCellReuseIdentifier: PersonalRecommendCell.identifier)
+
         
         fetchFestival()
         
@@ -40,7 +47,9 @@ class HomeViewController: UITableViewController {
         
         HttpManager.sharedManager.fetchFestival(params: params, completed: { (success, items) in
 
-            print("hany tag success \(success.hashValue)" )
+            if(success){
+                print("hany tag success \(success.hashValue)" )
+            }
             
         })
         
