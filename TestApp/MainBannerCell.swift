@@ -8,11 +8,14 @@
 
 import UIKit
 
-class MainBannerCell: UITableViewCell {
-    static let identifier =  "MainBannerCellIdentifire"
+class MainBannerCell: BaseTableViewCell {
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    override func bindData() {
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +26,14 @@ class MainBannerCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+//    class func sizeCell() -> CGSize {
+//        return  CGSize(width: ().width, height: 112.0 + 8.0)
+//    }
+    
+    override class func sizeCell() -> CGSize {
+        return  CGSize(width: UIScreen.main.bounds.width, height: 300.0)
     }
     
 }

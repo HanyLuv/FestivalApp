@@ -32,4 +32,10 @@ class BaseTableViewCell: UITableViewCell, NibLoadableView, ReusableView {
         // Configure the view for the selected state
     }
 
+    class func sizeCell() -> CGSize {
+        return CGSize()
+    }
+    
+    
 }
+

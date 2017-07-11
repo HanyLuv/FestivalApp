@@ -19,4 +19,8 @@ class BaseCollectionViewCell: UICollectionViewCell, NibLoadableView, ReusableVie
     func bindData(){
         
     }
+    
+    class func sizeCell() -> CGSize {
+        return CGSize()
+    }
 }

@@ -12,14 +12,16 @@ struct Constants {
     
     
     enum ItemTypes : Int { //아래 순서대로 홈에 아이템 타입 배치됨
-//        case MAIN_BANNER
+        case MAIN_BANNER
 //        case THEMA
-//        case RECOMMEND
+        case RECOMMEND
         case BEST_PLACE
 //        case LOCATION
         
     }
     
+    
+    //enum 으로 빼야하지않나?
     struct Path {
         static let LOCATION_FESTIVAL_PATH = "/locationBasedList" //지역 기반
         static let AREA_FESTIVAL_PATH = "/areaBasedList" //위치 기반

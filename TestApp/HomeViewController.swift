@@ -21,20 +21,28 @@ class HomeViewController: UITableViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
 
-        mainTableView.register(BaseTableViewCell.self)
+        mainTableView.register(MainBannerCell.self)
         mainTableView.register(BestPlaceCell.self)
         
-        
+        self.navigationItem.title = "^-^"
 
         for itemType in Constants.ItemTypes.all(){
-            festivals.append(Items.init(itemType: itemType))
+            let items = Items.init(itemType: itemType)
+            if itemType == .RECOMMEND {
+                items.sectionTitle = "너에게 딱 맞는 추천"
+            } else if itemType == .BEST_PLACE {
+                items.sectionTitle = "요즘 핫한 그 곳"
+            }
+            
+            festivals.append(items)
         }
         
-        fetchFestival()
+        fetchFestival(withPath: Constants.Path.SEARCH_FESTIVAL_PATH, itemType: Constants.ItemTypes.BEST_PLACE)
+        fetchFestival(withPath: Constants.Path.SEARCH_FESTIVAL_PATH, itemType: Constants.ItemTypes.RECOMMEND)
         
     }
     
-    private func fetchFestival(){
+    private func fetchFestival(withPath: String, itemType: Constants.ItemTypes){
         var params = [String:String]()
         /* 지역 기반.
          params["contentTypeId"] = "39"
@@ -53,13 +61,12 @@ class HomeViewController: UITableViewController {
         params["numOfRows"] = "10"
         
         
-        HttpManager.sharedManager.fetchFestival(path: Constants.Path.SEARCH_FESTIVAL_PATH, params: params, itemType: Constants.ItemTypes.BEST_PLACE,
-                                                completed: { [weak self] (success, items) in
+        HttpManager.sharedManager.fetchFestival(path: withPath, params: params, itemType: itemType, completed: { [weak self] (success, items) in
                                                     
             if(success) {
                 print("hany tag success \(success.hashValue)" )
                 guard let wself = self, let items = items, let itemType = items.itemType else { return }
-                wself.festivals[itemType.rawValue] = items
+                wself.festivals[itemType.rawValue].festivals = items.festivals
                 wself.mainTableView.reloadData()
             }
                                                     
@@ -84,27 +91,33 @@ class HomeViewController: UITableViewController {
         return festivals[section].festivals?.count ?? 0
     }
     
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         //각 셀마다 정해진 높이가 있으며 이를 반영해야한다..
+        return 300
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = BaseTableViewCell()
-        
         if indexPath.row < festivals.count {
-        
+            
             let items = festivals[indexPath.row]
             let itemType = items.itemType!
             
-            cell = tableView.dequeueResuableCell(forIndexPath: indexPath) as BestPlaceCell
-            cell.items = items
+            
+            var cell = BaseTableViewCell()
+                cell.items = items
             
             switch itemType {
+                case .BEST_PLACE, .RECOMMEND:
+                    cell = tableView.dequeueResuableCell(forIndexPath: indexPath) as BestPlaceCell
+                    cell.items = items
+                case .MAIN_BANNER:
+                    cell = tableView.dequeueResuableCell(forIndexPath: indexPath) as MainBannerCell
                 
-            case .BEST_PLACE:
-                cell = tableView.dequeueResuableCell(forIndexPath: indexPath) as BaseTableViewCell
-                cell.items = items
-
-            default:
-                return cell
             }
+            
+            return cell
         }
         
         

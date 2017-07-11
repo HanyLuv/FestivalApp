@@ -11,6 +11,7 @@ import ObjectMapper
 
 class Items: Mappable {
     
+    var sectionTitle: String?
     var itemType: Constants.ItemTypes?
     var festivals: [Festival]?
     
