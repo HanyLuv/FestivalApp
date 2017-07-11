@@ -1,6 +1,6 @@
 import UIKit
 
-class BestPlaceItemCell: UICollectionViewCell {
+class BestPlaceItemCell: BaseCollectionViewCell {
     
     static let identifier = "BestPlaceItemCellIdentifire"
     
@@ -8,17 +8,11 @@ class BestPlaceItemCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     
-    var festival: Festival?{
-        didSet{
-            bindData()
-        }
-    }
-    
-    private func bindData(){
+    override func bindData(){
         guard let festival = festival else {
             return
         }
-        
+    
         titleLabel.text = festival.title
         
         

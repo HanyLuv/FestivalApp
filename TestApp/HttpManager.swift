@@ -44,9 +44,9 @@ class HttpManager: NSObject {
         opQueue.maxConcurrentOperationCount = MAX_OPERATION_COUNT
     }
     
-    internal func fetchFestival(params: [String:String], completed callback: @escaping (_ success: Bool, _ items: Items?) -> Void) {
+    internal func fetchSearchFestival(params: [String:String], completed callback: @escaping (_ success: Bool, _ items: Items?) -> Void) {
         
-        let urlRequest = createGetRequest(path: Constants.Path.LOCATION_FESTIVAL_PATH, params: params)
+        let urlRequest = createGetRequest(path: Constants.Path.SEARCH_FESTIVAL_PATH, params: params)
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
             
             if let httpStatus = response as? HTTPURLResponse {           // check for http errors 200 성공임.
@@ -72,9 +72,49 @@ class HttpManager: NSObject {
     }
     
     
+    
+    internal func fetchFestival(path: String ,params: [String:String], itemType : Constants.ItemTypes,
+                                completed callback: @escaping (_ success: Bool, _ items: Items?) -> Void) {
+        
+        let urlRequest = createGetRequest(path: path, params: params)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            
+            if let httpStatus = response as? HTTPURLResponse {           // check for http errors 200 성공임.
+                print("response \(httpStatus.statusCode)")
+            }
+            
+            // 가지고온 데이터에서 resultCode에 따른 오류 처리해야함... 아래는 시리얼키 안넣었을때임.
+            //"{\"response\":{\"header\":{\"responseTime\":\"2017-07-11T11:39:33.534+09:00\",\"resultCode\":10,\"resultMsg\":\"INVALID REQUEST PARAMETER ERROR.\"}}}"
+            
+            
+            if let strData = String(data: data!, encoding: .utf8){
+                let json = JSON(parseJSON: strData)
+                let jsonItems = json["response"]["body"]["items"]
+                
+                if let strItems = jsonItems.rawString(), let items = Items(JSONString:strItems) {
+                    items.itemType = itemType
+                    callback(true, items)
+    
+                } else {
+                    callback(false, nil)
+                }
+                
+                
+            }
+        }
+        
+        opQueue.addOperation(HttpOperation.init(task: task))
+    }
+    
+    
+    
+    
     private func createGetRequest(path: String, params: [String: String]) -> URLRequest {
         var params = params
+        params["ServiceKey"] = Constants.KEY
         params["_type"] = "json"
+        params["MobileOS"] = "IOS" //와 세상에 iOS로하면 파라미터 에러가--;
+        params["MobileApp"] = "TestApp"
         
         var paramsStr: String = "?"
         for (key,value) in params{
@@ -82,7 +122,7 @@ class HttpManager: NSObject {
         }
         
         let url = URL.init(string: baseURL + path + paramsStr)!
-        print("url [ \( baseURL + paramsStr) ]")
+        print("url [ \( baseURL + path + paramsStr) ]")
         
         var requset = URLRequest.init(url: url)
         requset.httpMethod = "GET"

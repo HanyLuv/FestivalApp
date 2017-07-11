@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		183309771F1376DD0026059B /* BestPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183309751F1376DD0026059B /* BestPlaceCell.swift */; };
 		183309781F1376DD0026059B /* BestPlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183309761F1376DD0026059B /* BestPlaceCell.xib */; };
+		1868BB431F147BE8005E5A45 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868BB421F147BE8005E5A45 /* BaseTableViewCell.swift */; };
+		1868BB451F149765005E5A45 /* Componant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868BB441F149765005E5A45 /* Componant.swift */; };
+		1868BB491F14B674005E5A45 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868BB481F14B674005E5A45 /* BaseCollectionViewCell.swift */; };
 		18880C5B1F0A0AFA00F46571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C5A1F0A0AFA00F46571 /* AppDelegate.swift */; };
 		18880C601F0A0AFA00F46571 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18880C5E1F0A0AFA00F46571 /* Main.storyboard */; };
 		18880C621F0A0AFA00F46571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18880C611F0A0AFA00F46571 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		10B5F428DB5BF0B0614EF4DF /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		183309751F1376DD0026059B /* BestPlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlaceCell.swift; sourceTree = "<group>"; };
 		183309761F1376DD0026059B /* BestPlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestPlaceCell.xib; sourceTree = "<group>"; };
+		1868BB421F147BE8005E5A45 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		1868BB441F149765005E5A45 /* Componant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Componant.swift; sourceTree = "<group>"; };
+		1868BB481F14B674005E5A45 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		18880C571F0A0AFA00F46571 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18880C5A1F0A0AFA00F46571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18880C5F1F0A0AFA00F46571 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 			children = (
 				18FF51671F13728A00E0F847 /* BestPlaceItemCell.swift */,
 				18FF51681F13728A00E0F847 /* BestPlaceItemCell.xib */,
+				1868BB481F14B674005E5A45 /* BaseCollectionViewCell.swift */,
 			);
 			name = "CollectionView Cell";
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3F11258C1F11A7EE009C9A47 /* Constants.swift */,
+				1868BB441F149765005E5A45 /* Componant.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -200,6 +208,7 @@
 				3F11259F1F11A9BB009C9A47 /* PersonalRecommendCell.xib */,
 				183309751F1376DD0026059B /* BestPlaceCell.swift */,
 				183309761F1376DD0026059B /* BestPlaceCell.xib */,
+				1868BB421F147BE8005E5A45 /* BaseTableViewCell.swift */,
 			);
 			name = "Table Cell";
 			sourceTree = "<group>";
@@ -351,14 +360,17 @@
 				3F123ED41F0A89BB00672D97 /* Response.swift in Sources */,
 				3F123ED61F0A8AF700672D97 /* Header.swift in Sources */,
 				18880C741F0A364900F46571 /* FestivalManager.swift in Sources */,
+				1868BB431F147BE8005E5A45 /* BaseTableViewCell.swift in Sources */,
 				3F123ED21F0A80AF00672D97 /* Festival.swift in Sources */,
 				3F1125841F11A35E009C9A47 /* HomeViewController.swift in Sources */,
 				18880C781F0A3AB400F46571 /* ImageManager.swift in Sources */,
 				3F1125901F11A913009C9A47 /* ThemaCell.swift in Sources */,
 				3F1125A01F11A9BB009C9A47 /* PersonalRecommendCell.swift in Sources */,
 				3F1125871F11A44A009C9A47 /* MainBannerCell.swift in Sources */,
+				1868BB491F14B674005E5A45 /* BaseCollectionViewCell.swift in Sources */,
 				3F123ED81F0A8D2100672D97 /* Items.swift in Sources */,
 				3F11259C1F11A968009C9A47 /* LocationRecommendCell.swift in Sources */,
+				1868BB451F149765005E5A45 /* Componant.swift in Sources */,
 				18880C761F0A3A6500F46571 /* HttpManager.swift in Sources */,
 				18880C6D1F0A2EB300F46571 /* Park.swift in Sources */,
 				18880C5B1F0A0AFA00F46571 /* AppDelegate.swift in Sources */,

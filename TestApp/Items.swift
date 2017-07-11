@@ -11,7 +11,12 @@ import ObjectMapper
 
 class Items: Mappable {
     
+    var itemType: Constants.ItemTypes?
     var festivals: [Festival]?
+    
+    init(itemType: Constants.ItemTypes) {
+        self.itemType = itemType
+    }
     
     required init(map: Map) {
     }
