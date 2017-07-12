@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ThemaCell: UITableViewCell {
+class ThemaCell: BaseTableViewCell {
     static let identifier =  "ThemaCellIdentifire"
+    
+    @IBOutlet weak var firstThemaLabel: UILabel!
+    @IBOutlet weak var secondThemaLabel: UILabel!
+    @IBOutlet weak var thirdThemaLabel: UILabel!
+    @IBOutlet weak var fourthThemaLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,4 +27,7 @@ class ThemaCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func sizeCell() -> CGSize {
+        return  CGSize(width: UIScreen.main.bounds.width, height: 100.0)
+    }
 }

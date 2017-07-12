@@ -1,19 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ThemaCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="ThemaCell" customModule="TestApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무더운 여름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGm-DA-6bp">
+                        <rect key="frame" x="8" y="8" width="76" height="83.5"/>
+                        <color key="backgroundColor" red="0.88995897769927979" green="0.91017264127731323" blue="0.364787757396698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이색데이트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDi-pt-MoV">
+                        <rect key="frame" x="84" y="8" width="76" height="83.5"/>
+                        <color key="backgroundColor" red="0.59390980005264282" green="0.58729439973831177" blue="0.91721659898757935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커플을위한" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYj-VC-TF9">
+                        <rect key="frame" x="160" y="8" width="76" height="83.5"/>
+                        <color key="backgroundColor" red="0.94084292650222778" green="0.7412484884262085" blue="0.75829219818115234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주도로" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmJ-8X-L4R">
+                        <rect key="frame" x="236" y="8" width="76" height="83.5"/>
+                        <color key="backgroundColor" red="0.68557071685791016" green="0.89972537755966187" blue="0.93539810180664062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MDi-pt-MoV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0eU-5u-z6P"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fmJ-8X-L4R" secondAttribute="trailing" id="0g6-9y-ywa"/>
+                    <constraint firstItem="fmJ-8X-L4R" firstAttribute="leading" secondItem="NYj-VC-TF9" secondAttribute="trailing" id="8ta-Mx-QrD"/>
+                    <constraint firstItem="NYj-VC-TF9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Avk-V0-Lb3"/>
+                    <constraint firstItem="NYj-VC-TF9" firstAttribute="width" secondItem="fmJ-8X-L4R" secondAttribute="width" id="H7d-gB-BIP"/>
+                    <constraint firstItem="VGm-DA-6bp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="QQV-xt-oSy"/>
+                    <constraint firstItem="NYj-VC-TF9" firstAttribute="leading" secondItem="MDi-pt-MoV" secondAttribute="trailing" id="bUN-lN-AjE"/>
+                    <constraint firstItem="MDi-pt-MoV" firstAttribute="leading" secondItem="VGm-DA-6bp" secondAttribute="trailing" id="fID-SS-noD"/>
+                    <constraint firstItem="fmJ-8X-L4R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="fbO-E0-UYs"/>
+                    <constraint firstItem="MDi-pt-MoV" firstAttribute="width" secondItem="NYj-VC-TF9" secondAttribute="width" id="ihD-A3-rNp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="VGm-DA-6bp" secondAttribute="bottom" id="jBO-D2-reL"/>
+                    <constraint firstItem="VGm-DA-6bp" firstAttribute="width" secondItem="MDi-pt-MoV" secondAttribute="width" id="pkq-xe-DeH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="MDi-pt-MoV" secondAttribute="bottom" id="qvy-vz-At0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="fmJ-8X-L4R" secondAttribute="bottom" id="rZD-If-8Nx"/>
+                    <constraint firstItem="VGm-DA-6bp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="tAM-XD-QUL"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="NYj-VC-TF9" secondAttribute="bottom" id="xq3-tW-0pD"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="firstThemaLabel" destination="VGm-DA-6bp" id="dVp-M6-gJg"/>
+                <outlet property="fourthThemaLabel" destination="fmJ-8X-L4R" id="nbg-fl-myg"/>
+                <outlet property="secondThemaLabel" destination="MDi-pt-MoV" id="CAR-vd-g8B"/>
+                <outlet property="thirdThemaLabel" destination="NYj-VC-TF9" id="dE1-Op-DJn"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

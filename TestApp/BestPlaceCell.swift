@@ -36,7 +36,7 @@ class BestPlaceCell: BaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    override class func sizeCell() -> CGSize {
+    override func sizeCell() -> CGSize {
         return  CGSize(width: UIScreen.main.bounds.width, height: 300.0)
     }
     

@@ -32,7 +32,7 @@ class MainBannerCell: BaseTableViewCell {
 //        return  CGSize(width: ().width, height: 112.0 + 8.0)
 //    }
     
-    override class func sizeCell() -> CGSize {
+    override func sizeCell() -> CGSize {
         return  CGSize(width: UIScreen.main.bounds.width, height: 300.0)
     }
     

@@ -13,10 +13,10 @@ struct Constants {
     
     enum ItemTypes : Int { //아래 순서대로 홈에 아이템 타입 배치됨
         case MAIN_BANNER
-//        case THEMA
+        case THEMA // 테마별 
         case RECOMMEND
         case BEST_PLACE
-//        case LOCATION
+        case LOCATION //지역 기반
         
     }
     
