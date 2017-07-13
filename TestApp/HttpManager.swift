@@ -30,11 +30,11 @@ class HttpManager: NSObject {
     
     fileprivate let session: URLSession = {
         let headers: [String:String] = ["User-Agent": "MATT/1.0 (memeBox/4.1.5.320; iPhone OS/10.1; ko_KR; iPhone/x86_64; 750,1334)",
-                                    "Content-Type":"application/json"]
+                                        "Content-Type":"application/json"]
         
         let config = URLSessionConfiguration.default
-            config.timeoutIntervalForRequest = 5
-            config.httpAdditionalHeaders = headers
+        config.timeoutIntervalForRequest = 5
+        config.httpAdditionalHeaders = headers
         
         return URLSession(configuration: config)
     }()
@@ -94,7 +94,7 @@ class HttpManager: NSObject {
                 if let strItems = jsonItems.rawString(), let items = Items(JSONString:strItems) {
                     items.itemType = itemType
                     callback(true, items)
-    
+                    
                 } else {
                     callback(false, nil)
                 }
@@ -104,6 +104,33 @@ class HttpManager: NSObject {
         }
         
         opQueue.addOperation(HttpOperation.init(task: task))
+    }
+    
+    internal func fetchFestivalPhotoImage(withDataDictionary data: [String: String], callback: @escaping ((_ image: UIImage?) -> Void)){
+        //postion을 붙인 이유는 url로 operation의 key값을 저장하는데 중복되는 url일경우 잘못된 operation을 취소할지도 모르기때문이다.
+        //유니크 키 생성 좀더 생각해봐야 할듯 -_-ㅠ
+        guard let position = data["position"], let strURL = data["imageURL"] else {
+            return
+        }
+        
+        let imageURL = URL.init(string: strURL)!
+        let task = session.dataTask(with: imageURL) { (data, response, error) -> Void in
+            
+            if error != nil {
+                print("\(error)")
+                return
+            }
+            
+            if let data = data {
+                let image = UIImage(data: data)
+                callback(image)
+                
+            }
+        }
+        
+        let operation = HttpOperation.init(task: task)
+        operation.name = strURL + position
+        opQueue.addOperation(operation)
     }
     
     
@@ -137,10 +164,17 @@ class HttpManager: NSObject {
         }
     }
     
+    internal func cancelOperation(withKeyValue: String) {
+        for operation in opQueue.operations {
+            if operation.name == name {
+                operation.cancel()
+            }
+        }
+        
+    }
+    
     
 }
-
-
 
 
 
@@ -161,7 +195,7 @@ fileprivate class HttpOperation: Operation {
         task.cancel()
         
         print("hany tag cancel status : \(task.state.rawValue )" )
-
+        
     }
     
 }
