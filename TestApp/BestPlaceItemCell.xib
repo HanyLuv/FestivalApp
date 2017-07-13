@@ -11,35 +11,41 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BestPlaceItemCell" customModule="TestApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="155" height="159"/>
+            <rect key="frame" x="0.0" y="0.0" width="155" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="155" height="159"/>
+                <rect key="frame" x="0.0" y="0.0" width="155" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM6-0l-4I6">
-                        <rect key="frame" x="0.0" y="67" width="155" height="25"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nj0-Kr-OXc">
+                        <rect key="frame" x="5" y="5" width="145" height="125"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM6-0l-4I6">
+                        <rect key="frame" x="0.0" y="135" width="155" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="44N-Xe-tD3"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.78826314210891724" green="0.90871614217758179" blue="0.48902541399002075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="rM6-0l-4I6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Lv4-fd-7Wm"/>
-                <constraint firstItem="rM6-0l-4I6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ddy-k7-mRP"/>
-                <constraint firstItem="rM6-0l-4I6" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="flD-XS-1TT"/>
-                <constraint firstAttribute="trailing" secondItem="rM6-0l-4I6" secondAttribute="trailing" id="tka-uQ-f3J"/>
+                <constraint firstItem="rM6-0l-4I6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1mW-4H-CVd"/>
+                <constraint firstAttribute="trailing" secondItem="rM6-0l-4I6" secondAttribute="trailing" id="7EI-0O-WWR"/>
+                <constraint firstAttribute="trailing" secondItem="Nj0-Kr-OXc" secondAttribute="trailing" constant="5" id="JTD-PV-8io"/>
+                <constraint firstItem="rM6-0l-4I6" firstAttribute="top" secondItem="Nj0-Kr-OXc" secondAttribute="bottom" constant="5" id="Jxt-cK-mcn"/>
+                <constraint firstItem="Nj0-Kr-OXc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Nl7-OG-SEt"/>
+                <constraint firstItem="Nj0-Kr-OXc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="fyy-Hs-ObW"/>
+                <constraint firstAttribute="bottom" secondItem="rM6-0l-4I6" secondAttribute="bottom" id="wYU-jO-q6W"/>
             </constraints>
             <size key="customSize" width="155" height="159"/>
             <connections>
+                <outlet property="imageView" destination="Nj0-Kr-OXc" id="Y7a-RV-NEq"/>
                 <outlet property="titleLabel" destination="rM6-0l-4I6" id="vqJ-c8-GTG"/>
             </connections>
-            <point key="canvasLocation" x="86.5" y="108.5"/>
+            <point key="canvasLocation" x="88.5" y="84"/>
         </collectionViewCell>
     </objects>
 </document>

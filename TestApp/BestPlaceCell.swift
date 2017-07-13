@@ -51,7 +51,7 @@ extension BestPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate, U
     
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: floor(UIScreen.main.bounds.width / 3) , height: 230.0 )
+        return CGSize(width: floor(UIScreen.main.bounds.width / 3) , height: 160)
     }
     
 
@@ -65,6 +65,15 @@ extension BestPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate, U
         }
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let items = self.items, let festivals = items.festivals {
+            if let imageURL = festivals[indexPath.row].firstimage , let contentId = festivals[indexPath.row].contentid {
+                let key = imageURL + String(contentId)
+                HttpManager.sharedManager.cancelOperation(withKeyValue: key)
+            }
+        }
     }
     
 }

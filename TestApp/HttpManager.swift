@@ -107,16 +107,16 @@ class HttpManager: NSObject {
     }
     
     internal func fetchFestivalPhotoImage(withDataDictionary data: [String: String], callback: @escaping ((_ image: UIImage?) -> Void)){
-        //postion을 붙인 이유는 url로 operation의 key값을 저장하는데 중복되는 url일경우 잘못된 operation을 취소할지도 모르기때문이다.
+        //postion을 붙인 이유는 url로 operation의 key값을 저장하는데 중복되는 url일경우 잘못된 row의 요청을 취소할지도 모르기때문이다.
         //유니크 키 생성 좀더 생각해봐야 할듯 -_-ㅠ
-        guard let position = data["position"], let strURL = data["imageURL"] else {
+        guard let row = data["contentId"], let strURL = data["imageURL"] else {
             return
         }
         
         let imageURL = URL.init(string: strURL)!
         let task = session.dataTask(with: imageURL) { (data, response, error) -> Void in
             
-            if error != nil {
+            if let error = error {
                 print("\(error)")
                 return
             }
@@ -129,7 +129,7 @@ class HttpManager: NSObject {
         }
         
         let operation = HttpOperation.init(task: task)
-        operation.name = strURL + position
+        operation.name = strURL + row
         opQueue.addOperation(operation)
     }
     
@@ -164,7 +164,7 @@ class HttpManager: NSObject {
         }
     }
     
-    internal func cancelOperation(withKeyValue: String) {
+    internal func cancelOperation(withKeyValue name: String) {
         for operation in opQueue.operations {
             if operation.name == name {
                 operation.cancel()
