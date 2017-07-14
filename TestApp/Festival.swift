@@ -58,6 +58,16 @@ class Festival: Mappable {
     var tel: String?
     var title: String?
     
+    var key: String? {
+        get {
+            if let contentId = self.contentid, let imageURL = self.firstimage {
+                return String.init(format: "%@%@", imageURL, String(contentId))
+            }
+            
+            return nil
+        }
+    }
+    
     required init(map: Map) {
     }
     

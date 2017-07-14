@@ -19,10 +19,22 @@ class BestPlaceItemCell: BaseCollectionViewCell {
             
             let data: [String: String] = ["contentId" : String(contentId), "imageURL": imageURL ]
             
+            /*
+            guard let contentId = data["contentId"], let strURL = data["imageURL"] else {
+                return
+            }
             
-            HttpManager.sharedManager.fetchFestivalPhotoImage(withDataDictionary: data) { [weak self] (image) in
+            let key = String.init(format: "%@%@", strURL, contentId)
+            */
+            if let key = festival.key, let image = ImageCache.shared.imageFromDiskCache(forKey: festival.key) {
+                
+            }
+     
+            
+            HttpManager.sharedManager.fetchFestivalPhotoImage(withDataDictionary: data) { [weak self] (image, key) in
                 guard let wself = self, let image = image else { return }
                 
+                ImageCache.shared.store(image, forKey: key)
                 DispatchQueue.main.async {
                     wself.imageView.image = image
     

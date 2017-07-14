@@ -63,3 +63,7 @@ extension UICollectionView {
     }
     
 }
+
+//extension UIImage: Cacheable {
+//    
+//}
