@@ -85,7 +85,7 @@ class ImageCache {
     }
     
     private func cacheDataFath(forKey key: String) -> String {
-        return String(format: "%@%@", cacheFileDir ,key.hashValue)
+        return String(format: "%@%@", cacheFileDir ,String(key.hashValue))
     }
     
     

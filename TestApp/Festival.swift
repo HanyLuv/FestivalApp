@@ -61,7 +61,7 @@ class Festival: Mappable {
     var key: String? {
         get {
             if let contentId = self.contentid, let imageURL = self.firstimage {
-                return String.init(format: "%@%@", imageURL, String(contentId))
+                return String.init(format: "%@%@%@", imageURL,"/contentId/",String(contentId))
             }
             
             return nil
