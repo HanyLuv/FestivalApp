@@ -134,6 +134,8 @@ class HomeViewController: UITableViewController {
     
     private func dequeueResuableCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        //navigation controller 잘 넣는 방법이 뭐가있을까낭?
+        
         var cell: BaseTableViewCell
         
         let items = festivals[indexPath.section]
@@ -142,6 +144,7 @@ class HomeViewController: UITableViewController {
         switch itemType {
         case .BEST_PLACE, .RECOMMEND:
             cell = tableView.dequeueResuableCell(forIndexPath: indexPath) as BestPlaceCell
+            cell.navigationController = self.navigationController
             cell.items = items
             return cell
             

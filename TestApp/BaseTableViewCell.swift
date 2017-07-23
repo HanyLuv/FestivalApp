@@ -8,6 +8,7 @@
 import UIKit
 
 class BaseTableViewCell: UITableViewCell, NibLoadableView, ReusableView {
+    var navigationController: UINavigationController?
     
     var items: Items?{
         didSet{

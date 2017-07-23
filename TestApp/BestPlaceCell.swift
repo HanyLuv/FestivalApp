@@ -76,4 +76,12 @@ extension BestPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate, U
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let navigationController = self.navigationController else {
+            return
+        }
+
+        let festivalDetatilViewContlloer  = FestivalDetailViewController()
+        navigationController.pushViewController(festivalDetatilViewContlloer, animated: true)
+    }
 }

@@ -133,7 +133,30 @@ class HttpManager: NSObject {
         opQueue.addOperation(operation)
     }
     
+    //이미지 가져오는 func. 위의 함수와 합쳐주자.
+
+    internal func fetchImage(withImageStringURL strURL: String, callback: @escaping ((_ image: UIImage?, _ key: String) -> Void)){
     
+        let imageURL = URL.init(string: strURL)!
+        let task = session.dataTask(with: imageURL) { (data, response, error) -> Void in
+            
+            if let error = error {
+                print("\(error)")
+                return
+            }
+            
+            if let data = data {
+                let image = UIImage(data: data)
+                callback(image, "tamp")
+                
+            }
+        }
+        
+        let operation = HttpOperation.init(task: task)
+        operation.name = "tamp"
+        opQueue.addOperation(operation)
+        
+    }
     
     
     private func createGetRequest(path: String, params: [String: String]) -> URLRequest {
