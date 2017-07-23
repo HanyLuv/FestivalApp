@@ -26,6 +26,7 @@ struct Constants {
         static let LOCATION_FESTIVAL_PATH = "/locationBasedList" //지역 기반
         static let AREA_FESTIVAL_PATH = "/areaBasedList" //위치 기반
         static let SEARCH_FESTIVAL_PATH = "/searchFestival" //검색
+        static let FESTIVAL_DETAIL_IMAGE_PATH = "/detailImage" //이미지 상세
     }
 }
 

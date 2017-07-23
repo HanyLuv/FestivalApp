@@ -16,6 +16,7 @@ protocol HttpRequestResponse {
 
 class HttpManager: NSObject {
     private let baseURL = "https://api.visitkorea.or.kr/openapi/service/rest/KorService"
+    //http://api.visitkorea.or.kr/openapi/service/rest/EngService/detailImage
     
     
     private let MAX_OPERATION_COUNT: Int = 1
@@ -112,7 +113,7 @@ class HttpManager: NSObject {
         guard let key = festival.key, let strURL = festival.firstimage else {
             return
         }
-
+        
         let imageURL = URL.init(string: strURL)!
         let task = session.dataTask(with: imageURL) { (data, response, error) -> Void in
             
@@ -134,9 +135,9 @@ class HttpManager: NSObject {
     }
     
     //이미지 가져오는 func. 위의 함수와 합쳐주자.
-
-    internal func fetchImage(withImageStringURL strURL: String, callback: @escaping ((_ image: UIImage?, _ key: String) -> Void)){
     
+    internal func fetchImage(withImageStringURL strURL: String, callback: @escaping ((_ image: UIImage?, _ key: String) -> Void)){
+        
         let imageURL = URL.init(string: strURL)!
         let task = session.dataTask(with: imageURL) { (data, response, error) -> Void in
             
@@ -158,6 +159,44 @@ class HttpManager: NSObject {
         
     }
     
+    internal func fecthFestivalDetailImages(params: [String:String], completed callback: @escaping (_ success: Bool, _ detileImages: [Image]?) -> Void) {
+        
+        let urlRequest = createGetRequest(path: Constants.Path.FESTIVAL_DETAIL_IMAGE_PATH, params: params)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            
+            if let httpStatus = response as? HTTPURLResponse {           // check for http errors 200 성공임.
+                print("response \(httpStatus.statusCode)")
+            }
+            
+            if let strData = String(data: data!, encoding: .utf8){
+                let json = JSON(parseJSON: strData)
+                let jsonItemsDictionary = json["response"]["body"]["items"].dictionary
+                
+                if let jsonItemsDictionary = jsonItemsDictionary, let jsonItem = jsonItemsDictionary["item"], let jsonItemArray = jsonItem.array {
+                    
+                    var detileImages = [Image]()
+                    for subJson in jsonItemArray {
+                        
+                        if let imageJsonString = subJson.rawString(), let image = Image(JSONString: imageJsonString) {
+                            detileImages.append(image)
+                        }
+                    }
+                    callback(true, detileImages)
+                }
+                
+                //                if let strItems = jsonItems.rawString(), let items = Image(JSONString:strItems) {
+                ////                    callback(true, detileImages)
+                //
+                //                } else {
+                //                    callback(false, nil)
+                //                }
+                
+                
+            }
+        }
+        
+        opQueue.addOperation(HttpOperation.init(task: task))
+    }
     
     private func createGetRequest(path: String, params: [String: String]) -> URLRequest {
         var params = params

@@ -45,7 +45,7 @@
 		3F1B4D501F24DA7000A85A46 /* ImagePageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B4D4F1F24DA7000A85A46 /* ImagePageScrollView.swift */; };
 		3F1B4D531F24DFCA00A85A46 /* ImagePagerCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B4D511F24DFCA00A85A46 /* ImagePagerCellTableViewCell.swift */; };
 		3F1B4D541F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1B4D521F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib */; };
-		3F1B4D561F24E0D200A85A46 /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B4D551F24E0D200A85A46 /* DetailImage.swift */; };
+		3F1B4D561F24E0D200A85A46 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B4D551F24E0D200A85A46 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +90,7 @@
 		3F1B4D4F1F24DA7000A85A46 /* ImagePageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePageScrollView.swift; sourceTree = "<group>"; };
 		3F1B4D511F24DFCA00A85A46 /* ImagePagerCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePagerCellTableViewCell.swift; sourceTree = "<group>"; };
 		3F1B4D521F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePagerCellTableViewCell.xib; sourceTree = "<group>"; };
-		3F1B4D551F24E0D200A85A46 /* DetailImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImage.swift; sourceTree = "<group>"; };
+		3F1B4D551F24E0D200A85A46 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E3827822A05FF443F2AEE4F0 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,7 +199,7 @@
 				3F123EDB1F0A8F2D00672D97 /* Body.swift */,
 				3F123ED11F0A80AF00672D97 /* Festival.swift */,
 				3F123ED71F0A8D2100672D97 /* Items.swift */,
-				3F1B4D551F24E0D200A85A46 /* DetailImage.swift */,
+				3F1B4D551F24E0D200A85A46 /* Image.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -405,7 +405,7 @@
 				3F1B4D501F24DA7000A85A46 /* ImagePageScrollView.swift in Sources */,
 				188149701F15DF9C005F1C5F /* BaseTableViewCell.swift in Sources */,
 				3F123ED21F0A80AF00672D97 /* Festival.swift in Sources */,
-				3F1B4D561F24E0D200A85A46 /* DetailImage.swift in Sources */,
+				3F1B4D561F24E0D200A85A46 /* Image.swift in Sources */,
 				3F1125841F11A35E009C9A47 /* HomeViewController.swift in Sources */,
 				18880C781F0A3AB400F46571 /* ImageManager.swift in Sources */,
 				3F1125901F11A913009C9A47 /* ThemaCell.swift in Sources */,
