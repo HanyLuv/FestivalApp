@@ -107,12 +107,13 @@ class HttpManager: NSObject {
         opQueue.addOperation(HttpOperation.init(task: task))
     }
     
-    internal func fetchFestivalPhotoImage(withFestival festival: Festival, callback: @escaping ((_ image: UIImage?, _ key: String) -> Void)){
+    internal func fetchImage(withImageStringURL strURL: String, key: String, callback: @escaping ((_ image: UIImage?, _ key: String) -> Void)){
+        
         //postion을 붙인 이유는 url로 operation의 key값을 저장하는데 중복되는 url일경우 잘못된 row의 요청을 취소할지도 모르기때문이다.
         //유니크 키 생성 좀더 생각해봐야 할듯 -_-ㅠ
-        guard let key = festival.key, let strURL = festival.firstimage else {
-            return
-        }
+//        guard let key = festival.key, let strURL = festival.firstimage else {
+//            return
+//        }
         
         let imageURL = URL.init(string: strURL)!
         let task = session.dataTask(with: imageURL) { (data, response, error) -> Void in
@@ -132,64 +133,35 @@ class HttpManager: NSObject {
         let operation = HttpOperation.init(task: task)
         operation.name = key
         opQueue.addOperation(operation)
-    }
-    
-    //이미지 가져오는 func. 위의 함수와 합쳐주자.
-    
-    internal func fetchImage(withImageStringURL strURL: String, callback: @escaping ((_ image: UIImage?, _ key: String) -> Void)){
-        
-        let imageURL = URL.init(string: strURL)!
-        let task = session.dataTask(with: imageURL) { (data, response, error) -> Void in
-            
-            if let error = error {
-                print("\(error)")
-                return
-            }
-            
-            if let data = data {
-                let image = UIImage(data: data)
-                callback(image, "tamp")
-                
-            }
-        }
-        
-        let operation = HttpOperation.init(task: task)
-        operation.name = "tamp"
-        opQueue.addOperation(operation)
         
     }
     
-    internal func fecthFestivalDetailImages(params: [String:String], completed callback: @escaping (_ success: Bool, _ detileImages: [Image]?) -> Void) {
+    internal func fecthFestivalDetailImages(params: [String:String], itemType : Constants.DetailItemType, completed callback: @escaping (_ success: Bool, _ images: [Image]?, _ itemType: Constants.DetailItemType) -> Void) {
         
+        let itemType = itemType
         let urlRequest = createGetRequest(path: Constants.Path.FESTIVAL_DETAIL_IMAGE_PATH, params: params)
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
             
+            guard let data = data else { return }
             if let httpStatus = response as? HTTPURLResponse {           // check for http errors 200 성공임.
                 print("response \(httpStatus.statusCode)")
             }
             
-            if let strData = String(data: data!, encoding: .utf8){
+            if let strData = String(data: data, encoding: .utf8){
                 let json = JSON(parseJSON: strData)
                 let jsonItemsDictionary = json["response"]["body"]["items"].dictionary
                 
                 if let jsonItemsDictionary = jsonItemsDictionary, let jsonItem = jsonItemsDictionary["item"], let jsonItemArray = jsonItem.array {
                     
-                    var detileImages = [Image]()
+                    var images = [Image]()
                     for subJson in jsonItemArray {
                         
                         if let imageJsonString = subJson.rawString(), let image = Image(JSONString: imageJsonString) {
-                            detileImages.append(image)
+                            images.append(image)
                         }
                     }
-                    callback(true, detileImages)
+                    callback(true, images, itemType)
                 }
-                
-                //                if let strItems = jsonItems.rawString(), let items = Image(JSONString:strItems) {
-                ////                    callback(true, detileImages)
-                //
-                //                } else {
-                //                    callback(false, nil)
-                //                }
                 
                 
             }

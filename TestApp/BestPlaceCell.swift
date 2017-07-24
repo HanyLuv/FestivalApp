@@ -80,8 +80,13 @@ extension BestPlaceCell: UICollectionViewDataSource, UICollectionViewDelegate, U
         guard let navigationController = self.navigationController else {
             return
         }
-
+        
         let festivalDetatilViewContlloer  = FestivalDetailViewController()
+        
+        if let items = self.items, let festivals = items.festivals {
+            festivalDetatilViewContlloer.festival = festivals[indexPath.row]
+        }
+        
         navigationController.pushViewController(festivalDetatilViewContlloer, animated: true)
     }
 }

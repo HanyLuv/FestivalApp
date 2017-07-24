@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Image: Mappable{
+class Image: Mappable {
     /*
      <item>
      <contentid>1953272</contentid>
@@ -28,6 +28,16 @@ class Image: Mappable{
     var originimgurl: String?
     var serialnum: String?
     var smallimageurl: String?
+    
+    var key: String? {
+        get {
+            if let contentId = self.contentid, let imageURL = self.originimgurl {
+                return String.init(format: "%@%@%@", imageURL,"/contentId/",String(contentId))
+            }
+            
+            return nil
+        }
+    }
     
     required init(map: Map) {
     }

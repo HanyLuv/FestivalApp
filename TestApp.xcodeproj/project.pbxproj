@@ -46,6 +46,7 @@
 		3F1B4D531F24DFCA00A85A46 /* ImagePagerCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B4D511F24DFCA00A85A46 /* ImagePagerCellTableViewCell.swift */; };
 		3F1B4D541F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1B4D521F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib */; };
 		3F1B4D561F24E0D200A85A46 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B4D551F24E0D200A85A46 /* Image.swift */; };
+		3F1FC5CA1F26355300755BE2 /* DetailFestival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FC5C91F26355300755BE2 /* DetailFestival.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		3F1B4D511F24DFCA00A85A46 /* ImagePagerCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePagerCellTableViewCell.swift; sourceTree = "<group>"; };
 		3F1B4D521F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePagerCellTableViewCell.xib; sourceTree = "<group>"; };
 		3F1B4D551F24E0D200A85A46 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		3F1FC5C91F26355300755BE2 /* DetailFestival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFestival.swift; sourceTree = "<group>"; };
 		E3827822A05FF443F2AEE4F0 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,12 +137,12 @@
 		18880C591F0A0AFA00F46571 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				18880C721F0A362D00F46571 /* Network */,
 				1863AA781F18608300E41571 /* Cache */,
 				3F11258A1F11A7C5009C9A47 /* Common */,
 				3F1F89221F0D4F12008DDD8B /* View */,
 				3F123ED01F0A801E00672D97 /* Model */,
 				18880C791F0A433700F46571 /* Controller */,
-				18880C721F0A362D00F46571 /* Network */,
 				18880C5A1F0A0AFA00F46571 /* AppDelegate.swift */,
 				18880C5E1F0A0AFA00F46571 /* Main.storyboard */,
 				18880C6C1F0A2EB300F46571 /* Park.swift */,
@@ -200,6 +202,7 @@
 				3F123ED11F0A80AF00672D97 /* Festival.swift */,
 				3F123ED71F0A8D2100672D97 /* Items.swift */,
 				3F1B4D551F24E0D200A85A46 /* Image.swift */,
+				3F1FC5C91F26355300755BE2 /* DetailFestival.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				3F1125901F11A913009C9A47 /* ThemaCell.swift in Sources */,
 				1863AA801F189F6400E41571 /* ImageCache.swift in Sources */,
 				3F1125871F11A44A009C9A47 /* MainBannerCell.swift in Sources */,
+				3F1FC5CA1F26355300755BE2 /* DetailFestival.swift in Sources */,
 				1868BB491F14B674005E5A45 /* BaseCollectionViewCell.swift in Sources */,
 				3F123ED81F0A8D2100672D97 /* Items.swift in Sources */,
 				1868BB451F149765005E5A45 /* Componant.swift in Sources */,

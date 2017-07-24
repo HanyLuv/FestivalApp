@@ -19,8 +19,8 @@ class BestPlaceItemCell: BaseCollectionViewCell {
         if let key = festival.key, let image = ImageCache.shared.imageFromDiskCache(forKey: key) {
             self.imageView.image = image
         
-        } else {
-            HttpManager.sharedManager.fetchFestivalPhotoImage(withFestival: festival) { [weak self] (image, key) in
+        } else if let imgeURL = festival.firstimage , let key = festival.key {
+            HttpManager.sharedManager.fetchImage(withImageStringURL: imgeURL, key: key) { [weak self] (image, key) in
                 guard let wself = self, let image = image else { return }
                 
                 ImageCache.shared.store(image, forKey: key)

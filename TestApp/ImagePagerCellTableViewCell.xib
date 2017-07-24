@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUX-8h-IZM" customClass="ImagePageScrollView" customModule="TestApp" customModuleProvider="target">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUX-8h-IZM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                     </scrollView>
                 </subviews>
@@ -28,6 +28,9 @@
                     <constraint firstItem="sUX-8h-IZM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="z7b-9l-kMT"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="scrollView" destination="sUX-8h-IZM" id="CgL-E3-a8Y"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
