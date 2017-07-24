@@ -29,7 +29,6 @@ class ImagePagerCellTableViewCell: UITableViewCell, NibLoadableView, ReusableVie
         let width = Int(UIScreen.main.bounds.width)
         let contentsWidth = width * images.count
         scrollView.contentSize = CGSize.init(width: contentsWidth, height: width)
-        scrollView.backgroundColor = UIColor.blue
         scrollView.isPagingEnabled = true
     
         var imageX = 0
@@ -39,6 +38,8 @@ class ImagePagerCellTableViewCell: UITableViewCell, NibLoadableView, ReusableVie
             let imageView = UIImageView(frame: CGRect.init(x: imageX, y: 0, width: width, height: width))
             imageX = imageX + width
             imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            
             scrollView.addSubview(imageView)
             imageArray.append(imageView)
             
