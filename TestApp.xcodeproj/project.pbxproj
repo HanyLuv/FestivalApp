@@ -25,6 +25,8 @@
 		18880C741F0A364900F46571 /* FestivalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C731F0A364900F46571 /* FestivalManager.swift */; };
 		18880C761F0A3A6500F46571 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C751F0A3A6500F46571 /* HttpManager.swift */; };
 		18880C781F0A3AB400F46571 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18880C771F0A3AB400F46571 /* ImageManager.swift */; };
+		18C7ADEA1F2960150079D690 /* SummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7ADE81F2960150079D690 /* SummaryTableViewCell.swift */; };
+		18C7ADEB1F2960150079D690 /* SummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C7ADE91F2960150079D690 /* SummaryTableViewCell.xib */; };
 		18FF51691F13728A00E0F847 /* BestPlaceItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF51671F13728A00E0F847 /* BestPlaceItemCell.swift */; };
 		18FF516A1F13728A00E0F847 /* BestPlaceItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FF51681F13728A00E0F847 /* BestPlaceItemCell.xib */; };
 		1A088926F4508E2C98692424 /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DCB0263BA5D9E4BE3E7F5F4 /* Pods_TestApp.framework */; };
@@ -71,6 +73,8 @@
 		18880C731F0A364900F46571 /* FestivalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalManager.swift; sourceTree = "<group>"; };
 		18880C751F0A3A6500F46571 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
 		18880C771F0A3AB400F46571 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		18C7ADE81F2960150079D690 /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
+		18C7ADE91F2960150079D690 /* SummaryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SummaryTableViewCell.xib; sourceTree = "<group>"; };
 		18FF51671F13728A00E0F847 /* BestPlaceItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestPlaceItemCell.swift; sourceTree = "<group>"; };
 		18FF51681F13728A00E0F847 /* BestPlaceItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestPlaceItemCell.xib; sourceTree = "<group>"; };
 		2C439D875C53F4F29F4CDA3C /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 			children = (
 				3F1B4D511F24DFCA00A85A46 /* ImagePagerCellTableViewCell.swift */,
 				3F1B4D521F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib */,
+				18C7ADE81F2960150079D690 /* SummaryTableViewCell.swift */,
+				18C7ADE91F2960150079D690 /* SummaryTableViewCell.xib */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				3F1B4D541F24DFCA00A85A46 /* ImagePagerCellTableViewCell.xib in Resources */,
 				183309781F1376DD0026059B /* BestPlaceCell.xib in Resources */,
 				3F1125881F11A44A009C9A47 /* MainBannerCell.xib in Resources */,
+				18C7ADEB1F2960150079D690 /* SummaryTableViewCell.xib in Resources */,
 				3F1125911F11A913009C9A47 /* ThemaCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +411,7 @@
 				3F123ED41F0A89BB00672D97 /* Response.swift in Sources */,
 				3F123ED61F0A8AF700672D97 /* Header.swift in Sources */,
 				3F1B4D481F24D59B00A85A46 /* FestivalDetailViewController.swift in Sources */,
+				18C7ADEA1F2960150079D690 /* SummaryTableViewCell.swift in Sources */,
 				18880C741F0A364900F46571 /* FestivalManager.swift in Sources */,
 				3F1B4D501F24DA7000A85A46 /* ImagePageScrollView.swift in Sources */,
 				188149701F15DF9C005F1C5F /* BaseTableViewCell.swift in Sources */,
